@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZC_JournalEntry with
+{
+  @UI.facet: [ { id: 'Header',
+                    purpose: #STANDARD,
+                    type: #IDENTIFICATION_REFERENCE,
+                    label: 'Entry',
+                      position: 10 },
+               { id: 'Items',
+                    purpose: #STANDARD,
+                    type: #LINEITEM_REFERENCE,
+                    label: 'Items',
+                    position: 20,
+                    targetElement: '_Item' } ]
+
+  //  @UI.identification: [ { position: 10 } ]
+  //  UUID;
+
+  @Consumption.valueHelpDefinition: [ { entity: { name:'I_CompanyCode', element: 'CompanyCode' } } ]
+  @UI: { lineItem: [ { position: 10 } ], selectionField: [ { position: 10 } ], identification: [ { position: 20 } ] }
+  Bukrs;
+
+  @UI: { lineItem: [ { position: 20 } ], selectionField: [ { position: 20 } ], identification: [ { position: 30 } ] }
+  Gjahr;
+
+  @UI: { lineItem: [ { position: 30 } ], selectionField: [ { position: 30 } ], identification: [ { position: 40 } ] }
+  @Consumption.semanticObject: 'AccountingDocument'
+  Belnr;
+
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_Currency', element: 'Currency' } }]
+  @UI: { lineItem: [ { position: 40 } ], selectionField: [ { position: 40 } ], identification: [ { position: 50 } ] }
+  Waers;
+
+  @UI: { lineItem: [ { position: 50 } ], selectionField: [ { position: 50 } ], identification: [ { position: 60 } ] }
+  Bldat;
+
+  @UI: { lineItem: [ { position: 60 } ], selectionField: [ { position: 60 } ], identification: [ { position: 70 } ] }
+  Budat;
+
+  @UI: { lineItem: [ { position: 70 } ], identification: [ { position: 80 } ] }
+  Bktxt;
+
+}

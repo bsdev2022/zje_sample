@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service definition for ZC_JOURNALENTRY'
+define service Z_EXT_JR_POSTING {
+  expose ZC_JournalEntry;
+  expose ZC_JournalEntryItem;
+}
